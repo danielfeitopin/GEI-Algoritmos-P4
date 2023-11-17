@@ -1,0 +1,40 @@
+Practica 4 Algoritmos 
+
+Contexto:
+-Validamos el correcto funcionamiento de la implementación comprobando
+con las figuras 2 y 3 dadas en el boletín.
+
+-Calculamos empíricamente la complejidad computacional del algoritmo para el 
+cálculo de las distancias mínimas.
+
+-El experimento se ha realizado en la máquina LAGO_143 de la Facultad de 
+Ingeniería Informática (ubicada en el laboratorio 0.1) usando Ubuntu como 
+sistema operativo.
+
+Análisis de la complejidad de Dijkstra:
+Cota Subestimada:  f(n)= 8*n^2
+Cota Ajustada:     g(n)= n^2.8
+Cota Sobrestimada: h(n)= n^3
+
+   (n)		t(n)	   t(n)/f(n)	  t(n)/g(n)	 t(n)/h(n)
+*     10          13.274   0.0165925000   0.0210378722   0.0132740000
+*     20          95.705   0.0299078125   0.0217796371   0.0119631250
+      40         678.000   0.0529687500   0.0221544880   0.0105937500
+      80        4731.000   0.0924023438   0.0221973426   0.0092402344
+     160       32637.000   0.1593603516   0.0219874204   0.0079680176
+     320      239510.000   0.2923706055   0.0231688091   0.0073092651
+     640     1971075.000   0.6015243530   0.0223778426   0.0070190544
+					cte=0.022
+
+*:Cuando los tiempos son menores a 500 microsegundos se ejcuta el algoritmo 
+K=1000 veces y se calcula el tiempo promedio.
+
+Discusión:
+-Las mayores dificultades fueron encontrar las cotas. Para evitar las 
+anomalias hemos ejecutado varias veces el código y hemos seleccionado los 
+datos de la última ejecución.
+  
+Conclusión:
+Los tiempos de ejecución aumentan notablemente en función de la entrada debido al
+tamaño de memoria de la matriz, cuya dimensión crece cuadráticamente respecto al 
+orden de la matriz.
